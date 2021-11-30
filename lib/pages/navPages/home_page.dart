@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:travel_app/misc/colors.dart';
 import 'package:travel_app/widgets/app_large_text.dart';
 
 class Homepage extends StatefulWidget {
@@ -59,6 +60,8 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                   unselectedLabelColor: Colors.grey,
                   isScrollable: true,
                   indicatorSize: TabBarIndicatorSize.label,
+                  indicator:
+                      CircleTabIndicator(color: AppColors.mainColor, radius: 4),
                   tabs: const [
                     Tab(text: "Places"),
                     Tab(text: "Inspiration"),
@@ -79,5 +82,41 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
         ],
       ),
     );
+  }
+}
+
+class CircleTabIndicator extends Decoration {
+  final Color color;
+  double radius;
+
+  // constructor
+  CircleTabIndicator({required this.color, required this.radius});
+
+  @override
+  BoxPainter createBoxPainter([VoidCallback? onChanged]) {
+    // TODO: implement createBoxPainter
+    return _CirclePainter(color: color, radius: radius);
+  }
+}
+
+class _CirclePainter extends BoxPainter {
+  final Color color;
+  double radius;
+
+  // constructor
+  _CirclePainter({required this.color, required this.radius});
+
+  @override
+  void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
+    // TODO: implement paint
+    Paint _paint = Paint();
+    _paint.color = color;
+    _paint.isAntiAlias = true;
+
+// whereEver i click devide by 2
+    final Offset circleOffset = Offset(
+        configuration.size!.width / 2 - radius / 2,
+        configuration.size!.height - radius);
+    canvas.drawCircle(offset + circleOffset, radius, _paint);
   }
 }
