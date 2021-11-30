@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:travel_app/misc/colors.dart';
 import 'package:travel_app/widgets/app_large_text.dart';
 import 'package:travel_app/widgets/app_text.dart';
 
@@ -15,10 +16,10 @@ class WelcomePage extends StatefulWidget {
 class _WelcomePageState extends State<WelcomePage> {
   List images = [
     "welcome-one.png",
-    "welcome-two.png",
+    // "welcome-two.png",
     "welcome-three.png",
-    "welcome-4.jpg",
-    "welcome-5.jpg",
+    // "welcome-4.jpg",
+    // "welcome-5.jpg",
     "welcome-6.jpg",
   ];
 
@@ -49,11 +50,16 @@ class _WelcomePageState extends State<WelcomePage> {
                           text: "Mountain",
                           size: 30,
                         ),
+                        SizedBox(
+                          height: 20,
+                        ),
                         Container(
                           width: 250,
                           child: AppText(
                             text:
                                 "Mountain hikes gives you an incredible sense of freedome along with endurance test",
+                            color: AppColors.textColor2,
+                            size: 14,
                           ),
                         )
                       ],
