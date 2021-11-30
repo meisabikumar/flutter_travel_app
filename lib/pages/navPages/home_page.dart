@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/misc/colors.dart';
 import 'package:travel_app/widgets/app_large_text.dart';
+import 'package:travel_app/widgets/app_text.dart';
 
 class Homepage extends StatefulWidget {
   Homepage({Key? key}) : super(key: key);
@@ -96,6 +97,25 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
               Text("by"),
               Text("there"),
             ]),
+          ),
+          const SizedBox(height: 30),
+
+          //Explore More
+          Container(
+            margin: const EdgeInsets.only(left: 20, right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AppLargeText(
+                  text: "Explore",
+                  size: 22,
+                ),
+                AppText(
+                  text: "See all",
+                  color: AppColors.textColor1,
+                )
+              ],
+            ),
           )
         ],
       ),
