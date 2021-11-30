@@ -25,14 +25,19 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[0],
+      backgroundColor: Colors.white,
+      body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.white,
         currentIndex: currentIndex,
         onTap: onTap,
         selectedItemColor: Colors.black54,
         unselectedItemColor: Colors.grey.withOpacity(0.5),
         showUnselectedLabels: false,
         showSelectedLabels: false,
+        unselectedFontSize: 0,
+        selectedFontSize: 0,
         elevation: 0,
         items: [
           BottomNavigationBarItem(title: Text("Home"), icon: Icon(Icons.apps)),
