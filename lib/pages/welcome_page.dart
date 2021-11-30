@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:travel_app/widgets/app_large_text.dart';
 
 class WelcomePage extends StatefulWidget {
   // WelcomePage({Key? key}) : super(key: key);
@@ -40,7 +41,9 @@ class _WelcomePageState extends State<WelcomePage> {
                 child: Row(
                   children: [
                     Column(
-                      children: [],
+                      children: [
+                        AppLargeText(text: "Trips"),
+                      ],
                     )
                   ],
                 ),
