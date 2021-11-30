@@ -3,6 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/widgets/app_large_text.dart';
+import 'package:travel_app/widgets/app_text.dart';
 
 class WelcomePage extends StatefulWidget {
   // WelcomePage({Key? key}) : super(key: key);
@@ -41,8 +42,20 @@ class _WelcomePageState extends State<WelcomePage> {
                 child: Row(
                   children: [
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start, //align
                       children: [
                         AppLargeText(text: "Trips"),
+                        AppText(
+                          text: "Mountain",
+                          size: 30,
+                        ),
+                        Container(
+                          width: 250,
+                          child: AppText(
+                            text:
+                                "Mountain hikes gives you an incredible sense of freedome along with endurance test",
+                          ),
+                        )
                       ],
                     )
                   ],
