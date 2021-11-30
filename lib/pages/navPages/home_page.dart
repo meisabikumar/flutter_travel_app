@@ -50,15 +50,21 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
 
           //tabBar
           Container(
-            child: TabBar(
-                controller: _tabController,
-                labelColor: Colors.black,
-                unselectedLabelColor: Colors.grey,
-                tabs: const [
-                  Tab(text: "Places"),
-                  Tab(text: "Inspiration"),
-                  Tab(text: "Emotions")
-                ]),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: TabBar(
+                  labelPadding: const EdgeInsets.only(left: 20, right: 20),
+                  controller: _tabController,
+                  labelColor: Colors.black,
+                  unselectedLabelColor: Colors.grey,
+                  isScrollable: true,
+                  indicatorSize: TabBarIndicatorSize.label,
+                  tabs: const [
+                    Tab(text: "Places"),
+                    Tab(text: "Inspiration"),
+                    Tab(text: "Emotions")
+                  ]),
+            ),
           ),
           // tabBar View
           Container(
