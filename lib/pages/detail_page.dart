@@ -42,17 +42,19 @@ class _DetailPageState extends State<DetailPage> {
               ),
             ),
             Positioned(
-                top: 270,
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 500,
-                  decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30),
-                        topRight: Radius.circular(30),
-                      )),
-                ))
+              top: 270,
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: 500,
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
