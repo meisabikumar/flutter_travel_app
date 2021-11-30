@@ -73,8 +73,18 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
           Container(
             height: 300,
             width: double.maxFinite,
-            child: TabBarView(controller: _tabController, children: const [
-              Text("hi"),
+            child: TabBarView(controller: _tabController, children: [
+              Container(
+                width: 200,
+                height: 300,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
+                  image: const DecorationImage(
+                      image: AssetImage("img/mountain.jpeg"),
+                      fit: BoxFit.cover),
+                ),
+              ),
               Text("by"),
               Text("there"),
             ]),
