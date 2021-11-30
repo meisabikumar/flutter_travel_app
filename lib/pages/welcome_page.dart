@@ -42,6 +42,7 @@ class _WelcomePageState extends State<WelcomePage> {
               child: Container(
                 margin: const EdgeInsets.only(top: 150, left: 20, right: 20),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start, //align
@@ -70,7 +71,19 @@ class _WelcomePageState extends State<WelcomePage> {
                           width: 120,
                         )
                       ],
-                    )
+                    ),
+                    Column(
+                      children: List.generate(3, (index) {
+                        return Container(
+                          width: 8,
+                          height: 25,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: AppColors.mainColor,
+                          ),
+                        );
+                      }),
+                    ),
                   ],
                 ),
               ),
