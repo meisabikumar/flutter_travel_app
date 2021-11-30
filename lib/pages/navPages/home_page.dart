@@ -71,19 +71,27 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
           ),
           // tabBar View
           Container(
+            padding: EdgeInsets.only(left: 20),
             height: 300,
             width: double.maxFinite,
             child: TabBarView(controller: _tabController, children: [
-              Container(
-                width: 200,
-                height: 300,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.white,
-                  image: const DecorationImage(
-                      image: AssetImage("img/mountain.jpeg"),
-                      fit: BoxFit.cover),
-                ),
+              ListView.builder(
+                itemCount: 3,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    margin: EdgeInsets.only(right: 15, top: 10),
+                    width: 200,
+                    height: 300,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white,
+                      image: const DecorationImage(
+                          image: AssetImage("img/mountain.jpeg"),
+                          fit: BoxFit.cover),
+                    ),
+                  );
+                },
               ),
               Text("by"),
               Text("there"),
