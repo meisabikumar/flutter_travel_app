@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
-class name extends StatelessWidget {
-  const name({Key? key}) : super(key: key);
+class BarItemPage extends StatelessWidget {
+  const BarItemPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
