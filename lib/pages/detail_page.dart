@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/misc/colors.dart';
+import 'package:travel_app/widgets/app_buttons.dart';
 import 'package:travel_app/widgets/app_large_text.dart';
 import 'package:travel_app/widgets/app_text.dart';
 
@@ -97,6 +98,32 @@ class _DetailPageState extends State<DetailPage> {
                         SizedBox(width: 10),
                         AppText(text: "(4.0)", color: AppColors.textColor2)
                       ],
+                    ),
+                    const SizedBox(height: 20),
+                    AppLargeText(
+                      text: "People",
+                      color: Colors.black.withOpacity(0.8),
+                      size: 20,
+                    ),
+                    const SizedBox(height: 5),
+                    AppText(
+                      text: "Number of people in your group",
+                      color: AppColors.mainTextColor,
+                    ),
+                    const SizedBox(height: 10),
+                    Wrap(
+                      children: List.generate(5, (index) {
+                        return Container(
+                          margin: EdgeInsets.only(right: 10),
+                          child: AppButton(
+                            color: Colors.black,
+                            backgroundColor: AppColors.buttonBackground,
+                            size: 50,
+                            borderColor: AppColors.buttonBackground,
+                            text: (index + 1).toString(),
+                          ),
+                        );
+                      }),
                     )
                   ],
                 ),
