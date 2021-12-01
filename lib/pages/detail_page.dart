@@ -13,6 +13,7 @@ class DetailPage extends StatefulWidget {
 
 class _DetailPageState extends State<DetailPage> {
   int gottenStar = 4;
+  int selectedIndex = -1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -113,14 +114,27 @@ class _DetailPageState extends State<DetailPage> {
                     const SizedBox(height: 10),
                     Wrap(
                       children: List.generate(5, (index) {
-                        return Container(
-                          margin: EdgeInsets.only(right: 10),
-                          child: AppButton(
-                            color: Colors.black,
-                            backgroundColor: AppColors.buttonBackground,
-                            size: 50,
-                            borderColor: AppColors.buttonBackground,
-                            text: (index + 1).toString(),
+                        return InkWell(
+                          onTap: () {
+                            setState(() {
+                              selectedIndex = index;
+                            });
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(right: 10),
+                            child: AppButton(
+                              color: selectedIndex == index
+                                  ? Colors.white
+                                  : Colors.black,
+                              backgroundColor: selectedIndex == index
+                                  ? Colors.black
+                                  : AppColors.buttonBackground,
+                              size: 50,
+                              borderColor: selectedIndex == index
+                                  ? Colors.black
+                                  : AppColors.buttonBackground,
+                              text: (index + 1).toString(),
+                            ),
                           ),
                         );
                       }),
