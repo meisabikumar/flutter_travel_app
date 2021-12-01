@@ -3,6 +3,7 @@ import 'package:travel_app/misc/colors.dart';
 import 'package:travel_app/widgets/app_buttons.dart';
 import 'package:travel_app/widgets/app_large_text.dart';
 import 'package:travel_app/widgets/app_text.dart';
+import 'package:travel_app/widgets/responsive_button.dart';
 
 class DetailPage extends StatefulWidget {
   DetailPage({Key? key}) : super(key: key);
@@ -138,11 +139,46 @@ class _DetailPageState extends State<DetailPage> {
                           ),
                         );
                       }),
-                    )
+                    ),
+                    const SizedBox(height: 20),
+                    AppLargeText(
+                      text: "Description",
+                      color: Colors.black.withOpacity(0.8),
+                      size: 20,
+                    ),
+                    const SizedBox(height: 10),
+                    AppText(
+                      text:
+                          "you must go for a travel. Travlling helps get rid of pressure. Go to the mountains to see the nature",
+                      color: AppColors.mainTextColor,
+                      // size: 20,
+                    ),
                   ],
                 ),
               ),
             ),
+            Positioned(
+              left: 20,
+              bottom: 20,
+              right: 20,
+              child: Row(
+                children: [
+                  AppButton(
+                      color: AppColors.textColor1,
+                      backgroundColor: Colors.white,
+                      size: 60,
+                      borderColor: AppColors.textColor2,
+                      isIcon: true,
+                      icon: Icons.favorite_border),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  ResponsiveButton(
+                    isResponsive: true,
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
