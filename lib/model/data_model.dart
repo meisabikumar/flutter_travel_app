@@ -47,6 +47,8 @@ class DataModel {
 
   String toJson() => json.encode(toMap());
 
-  factory DataModel.fromJson(String source) =>
-      DataModel.fromMap(json.decode(source));
+  // factory DataModel.fromJson(String source) => DataModel.fromMap(json.decode(source));
+
+  factory DataModel.fromJson(Map<String, dynamic> source) =>
+      DataModel.fromMap(source);
 }
