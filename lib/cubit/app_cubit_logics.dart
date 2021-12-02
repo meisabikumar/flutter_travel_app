@@ -5,6 +5,7 @@ import 'package:travel_app/cubit/app_cubits.dart';
 import 'package:travel_app/cubit/app_cubits_states.dart';
 import 'package:travel_app/pages/detail_page.dart';
 import 'package:travel_app/pages/home_page.dart';
+import 'package:travel_app/pages/navPages/main_page.dart';
 import 'package:travel_app/pages/welcome_page.dart';
 
 class AppCubitLogics extends StatefulWidget {
@@ -27,7 +28,7 @@ class _AppCubitLogicsState extends State<AppCubitLogics> {
             return DetailPage();
           }
           if (state is LoadedState) {
-            return Homepage();
+            return MainPage();
           }
           if (state is LoadingState) {
             return const Center(
